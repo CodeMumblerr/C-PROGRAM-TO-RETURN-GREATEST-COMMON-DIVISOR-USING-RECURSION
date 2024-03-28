@@ -1,0 +1,25 @@
+// C PROGRAM TO RETURN GREATEST COMMON DIVISOR USING RECURSION
+#include<stdio.h>
+int gcd(int p, int q) 
+ { 
+    if (p == 0) 
+       return q; 
+    if (q == 0) 
+       return p; 
+    if (p == q) 
+      return p; 
+    if (p > q) 
+        return gcd(p-q, q);   
+    else
+        return gcd(p, q-p); 
+ } 
+int main() 
+{ 
+    int p, q;
+    printf("Enter first number:");
+    scanf("%d",&p);
+    printf("Enter second number:");
+    scanf("%d",&q);
+    printf("GCD of %d and %d is %d ", p, q, gcd(p, q)); 
+    return 0; 
+}
